@@ -1,3 +1,6 @@
 # heraweb
 
-command : $npm run dev
+# setup
+command :
+ $npm install  
+ $npm run dev
