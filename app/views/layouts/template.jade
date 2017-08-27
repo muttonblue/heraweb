@@ -1,0 +1,73 @@
+doctype html
+html(lang='en')
+  head
+    block meta
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      meta(name='description', content='')
+      meta(name='author', content='')
+  
+    block title
+      title= 'Welcome to Template'
+      
+    // Bootstrap Core CSS
+    link(href='../vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // MetisMenu CSS
+    link(href='../vendor/metisMenu/metisMenu.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='../dist/css/sb-admin-2.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='../vendor/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body
+    #wrapper
+      div#toggled    
+        include menu.jade
+      // Page Content
+      
+      #page-wrapper
+        .container-fluid
+          block content
+            h1.page-header Blank
+            h2 Well done sir
+            p This template has a responsive menu toggling system. 
+            | The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.
+            p Make sure to keep all page content within the
+            // /.col-lg-12
+          // /.row
+        // /.container-fluid
+      // /#page-wrapper
+    // /#wrapper
+
+    // jQuery
+    script(src='../vendor/jquery/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='../vendor/bootstrap/js/bootstrap.min.js')
+    // Metis Menu Plugin JavaScript
+    script(src='../vendor/metisMenu/metisMenu.min.js')
+    // Custom Theme JavaScript
+    script(src='../dist/js/sb-admin-2.js')
+
+  script.
+    console.log('template reder');
+    $("#toggle").click( function(event){
+      event.preventDefault();
+      if ($(this).hasClass("isDown") ) {
+          $( ".navbar-fixed-top" ).animate({ "margin-top": "-62px" }, "fast" );  
+          $( "#content" ).animate({ "margin-top": "5px" }, "fast" );
+          $(this).removeClass("isDown");
+      } else {
+          $( ".navbar-fixed-top" ).animate({ "margin-top": "0px" }, "fast" );
+          $( "#content" ).animate({ "margin-top": "80px" }, "fast" );
+          $(this).addClass("isDown");
+      }
+      return false;
+    });
+  
+  block scripts
+    
