@@ -1,8 +1,6 @@
-var PAGE = 'pages/sample';
-
 //TODO: app.get('/pages/sample/index' , controller.render);
 exports.render = function(req, res) {
-  res.render(PAGE , {
+  res.render('pages/sample/index' , {
     title : "Sample Page",
     message : "How are things."
   }); //render

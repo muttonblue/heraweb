@@ -1,16 +1,28 @@
-var PAGE = 'index';
 
 exports.render = function(req, res) {
+  var isLoggedIn = false; 
+  console.log('c  c  ' + JSON.stringify(req.session)  );
+  if(typeof req.session.remember !== 'undefined'){
+    isLoggedIn = req.session.remember;
+  } 
+   res.render('index' , {
+     "title" : "Hello World",
+     "message" : "How are things."
+   }); //jade
+ 
+};
+
+exports.template = function(req, res) {
   var isLoggedIn = false;
   console.log('c  c  ' + JSON.stringify(req.session)  );
   if(typeof req.session.remember !== 'undefined'){
     isLoggedIn = req.session.remember;
   }
 
-   res.render('pages/index' , {
+   res.render('layouts/template' , {
      "title" : "Hello World",
      "message" : "How are things."
-   }); //jade
+   }); 
  
 };
 

@@ -1,0 +1,56 @@
+extends ./../layouts/template.pug
+block meta
+  meta(name='author', content='heraweb')
+  
+block title
+  title= 'Welcome to Heraweb' 
+
+block mixins
+  include mixins/reusable
+  include mixins/arguments
+  include mixins/block-content
+  include mixins/attributes
+  include mixins/rest-arguments
+  include mixins/input-search
+
+block content
+  h1.page-header Template
+  h2 Well done sir
+  p This template has a responsive menu toggling system.
+  p Make sure to keep all page content within the 
+
+  h3 Mixins example
+  div#mixins-exsample
+    +inputsearch('dd')(inputId="search-user", btnId="search-user")
+
+    +list('my-list', 1, 2, 3, 4)
+    
+    +link('/foo', 'foo')(class="btn")
+
+    +list()
+
+    ul
+      +pet('cat')
+      +pet('dog')
+      +pet('pig')
+
+    +article('Hello world')
+
+    +article('Hello world')
+      p This is my
+      p Amazing article
+          +article('Hello world')
+            p This is my
+            p Amazing article
+
+    +article('Hello world')
+      p This is my
+      p Amazing article
+
+  h3 Mixins example
+  div#components-exsample
+    include ../components/search-comp
+
+block scripts
+
+    

@@ -2,6 +2,7 @@ module.exports = function(app){
   var index = require('../controllers/index.controller.js');
   var patient = require('../controllers/patient.controller.js');
   app.get('/' , index.render);
+  app.get('/template' , index.template);
   app.get('/heraapp' , index.render);
   app.get('/heraapp/index' , index.render);
   app.get('/heraapp/index' , index.index);
@@ -17,6 +18,7 @@ module.exports = function(app){
   app.get('/heraapp/grid' , index.grid);
   app.get('/heraapp/blank' , index.blank);
   app.get('/heraapp/login' , index.login);
+  
 
 
 

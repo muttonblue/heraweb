@@ -1,0 +1,101 @@
+nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+  .navbar-header
+    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand(href='index') Heraapp v.1.0.0-rc
+  // /.navbar-header
+  ul.nav.navbar-top-links.navbar-right
+    include ./menu/menu-messages
+    include ./menu/menu-tasks
+    include ./menu/menu-alerts
+    include ./menu/menu-user
+  // /.navbar-top-links
+
+  .navbar-default.sidebar(role='navigation')
+    .sidebar-nav.navbar-collapse
+      ul#side-menu.nav
+        li.sidebar-search
+         include ../components/search-comp
+        li
+          a(href='index')
+            i.fa.fa-dashboard.fa-fw
+            |  Dashboard
+        li
+          a(href='#')
+            i.fa.fa-bar-chart-o.fa-fw
+            |  Charts
+            span.fa.arrow
+          ul.nav.nav-second-level
+            li
+              a(href='flot') Flot Charts
+            li
+              a(href='morris') Morris.js Charts
+          // /.nav-second-level
+        li
+          a(href='tables')
+            i.fa.fa-table.fa-fw
+            |  Tables
+        li
+          a(href='forms')
+            i.fa.fa-edit.fa-fw
+            |  Forms
+        li
+          a(href='#')
+            i.fa.fa-wrench.fa-fw
+            |  UI Elements
+            span.fa.arrow
+          ul.nav.nav-second-level
+            li
+              a(href='panels-wells') Panels and Wells
+            li
+              a(href='buttons') Buttons
+            li
+              a(href='notifications') Notifications
+            li
+              a(href='typography') Typography
+            li
+              a(href='icons')  Icons
+            li
+              a(href='grid') Grid
+          // /.nav-second-level
+        li
+          a(href='#')
+            i.fa.fa-sitemap.fa-fw
+            |  Multi-Level Dropdown
+            span.fa.arrow
+          ul.nav.nav-second-level
+            li
+              a(href='#') Second Level Item
+            li
+              a(href='#') Second Level Item
+            li
+              a(href='#')
+                | Third Level 
+                span.fa.arrow
+              ul.nav.nav-third-level
+                li
+                  a(href='#') Third Level Item
+                li
+                  a(href='#') Third Level Item
+                li
+                  a(href='#') Third Level Item
+                li
+                  a(href='#') Third Level Item
+              // /.nav-third-level
+          // /.nav-second-level
+        li.active
+          a(href='#')
+            i.fa.fa-files-o.fa-fw
+            |  Sample Pages
+            span.fa.arrow
+          ul.nav.nav-second-level
+            li
+              a.active(href='blank') Blank Page
+            li
+              a(href='login') Login Page
+          // /.nav-second-level
+    // /.sidebar-collapse
+// /.navbar-static-side

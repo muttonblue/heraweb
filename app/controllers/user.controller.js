@@ -1,4 +1,5 @@
 var PAGE = 'login';
+
 exports.getlogin = function(req, res) {
   res.render(PAGE , {
     title : "Logged in as ",
@@ -16,7 +17,7 @@ exports.login = function(req, res){
   console.log('>> login');
   console.log(body);
   console.log('Email: ' + email);
-  console.log('Password: ' + password);
+  consocfle.log('Password: ' + password);
   console.log('remember: ' + remember);
 
  req.session.userlogin = email;

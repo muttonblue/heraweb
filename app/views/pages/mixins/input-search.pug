@@ -1,0 +1,13 @@
+mixin inputsearch()
+    - var att = {'inputId': 'inputId', 'btnId' : 'btnId' , 'placeholder' : 'Search...' } || attributes;
+    .input-group.custom-search-form
+        input.form-control(
+                id='mixin:inputsearch:' + att.inputId
+                type='text' 
+                placeholder=att.placeholder
+            )
+        span.input-group-btn
+            button.btn.btn-default(id='mixin:inputsearch:' + att.btnId, 
+            | type='button')
+                i.fa.fa-search
+    // /input-group

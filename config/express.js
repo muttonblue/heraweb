@@ -14,8 +14,7 @@ module.exports = function() {
  console.info('>>> START reder express.js >>>');
  console.log('conf : ' + JSON.stringify(conf) );
 
-
-  var app = express(); // create our app w/ express
+  var app = express(); // create our app express
   //verify NODE_EVN
   let nodeEvn = process.env.NODE_EVN || 'development';
   if(nodeEvn === 'development') {
@@ -72,17 +71,21 @@ module.exports = function() {
    }
  });
 // ====================
+    app.set('appmodule', 'heraweb');
+
     // database
     require('../app/database/users.database')(app);
 
- // Routes
-  require('../app/routes/index.routes')(app);
-  require('../app/routes/home.routes')(app);
-  require('../app/routes/sample.routes')(app);
-  require('../app/routes/medicalRecord.routes')(app);
-  require('../app/routes/user.routes')(app);
-  require('../app/routes/admin.routes')(app);
-  require('../app/routes/database.routes')(app);
+    // Routes
+      require('../app/routes/sample.routes')(app);
+  
+      require('../app/routes/index.routes')(app);
+      require('../app/routes/home.routes')(app);
+      
+      require('../app/routes/medicalRecord.routes')(app);
+      require('../app/routes/user.routes')(app);
+      require('../app/routes/admin.routes')(app);
+      require('../app/routes/database.routes')(app);
 
 
   app.use(express.static('public')); 

@@ -1,6 +1,6 @@
 module.exports = function(app){
   var controller = require('../controllers/sample.controller.js');
-  app.get('/pages/sample/index' , controller.render);
+  app.get('/sample/index' , controller.render);
 
   app.post('/pages/sample/listPatient' , controller.listPatient);
   app.post('/pages/sample/listDoctor' , controller.listDoctor);
